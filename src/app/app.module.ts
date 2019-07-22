@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MatMenuModule, MatSidenavModule } from '@angular/material';
+import { MatMenuModule, MatSidenavModule, MatGridListModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 
@@ -30,6 +30,7 @@ const appRoutes: Routes = [];
         RouterModule.forRoot(appRoutes),
         MatMenuModule,
         MatSidenavModule,
+        MatGridListModule
     ],
     providers: [],
     bootstrap: [AppComponent]

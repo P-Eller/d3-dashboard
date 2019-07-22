@@ -2,3 +2,4 @@
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+html { background-color: rgb(27, 26, 31); }

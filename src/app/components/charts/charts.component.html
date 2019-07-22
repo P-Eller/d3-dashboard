@@ -1,4 +1,21 @@
-<div>
-    <app-donut-chart-item *ngFor="let donut_chart of donut_charts" [chart]="donut_chart"></app-donut-chart-item>
-    <app-bar-chart-item *ngFor="let bar_chart of bar_charts" [chart]="bar_chart"></app-bar-chart-item>
-</div>
+<mat-grid-list cols="2" rowHeight="fit" style="height:600px" margin gutterSize="30px">
+    
+    <mat-grid-tile>
+        
+        <app-donut-chart-item *ngFor="let donut_chart of donut_chart_1" [chart]="donut_chart"></app-donut-chart-item>
+    
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-bar-chart-item *ngFor="let bar_chart of bar_chart_1" [chart]="bar_chart"></app-bar-chart-item>
+    </mat-grid-tile>
+        <mat-grid-tile>
+        
+        <app-donut-chart-item *ngFor="let donut_chart of donut_chart_2" [chart]="donut_chart"></app-donut-chart-item>
+    
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-bar-chart-item *ngFor="let bar_chart of bar_chart_2" [chart]="bar_chart"></app-bar-chart-item>
+    </mat-grid-tile>
+
+
+</mat-grid-list>

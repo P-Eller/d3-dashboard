@@ -8,6 +8,6 @@
 
 .axis-title {
     fill: none;
-    stroke: black;
-    stroke-width: 0.5px;
+    stroke: rgb(211, 211, 211);
+    stroke-width: 1px;
 }
