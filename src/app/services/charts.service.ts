@@ -6,7 +6,51 @@ import { Injectable } from '@angular/core';
 export class ChartsService {
 
   constructor() { }
-  getCharts(){
+
+  getBarCharts(){
+    return[
+      {
+        title:"Production timming",
+        type:"BAR",
+        xlabel:[],
+        x:[
+          "On time",
+          "Delayed",
+          "Others"
+        ],
+        ylabel:[
+          "Cars"
+        ],
+        y:[
+          36231,
+          8900,
+          69
+        ]
+      },
+      {
+        title:"Factory process",
+        type:"BAR",
+        xlabel:[],
+        x:[
+          "Success",
+          "Failure"
+        ],
+        ylabel:[
+          "Process"
+        ],
+        y:[
+          464778,
+          2358
+        ]
+      }
+    ]
+  }
+
+
+
+
+
+  getDonutCharts(){
     return[
       {
         title:"Fail cases",

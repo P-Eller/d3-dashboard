@@ -11,6 +11,7 @@ import { TodosComponent } from './components/todos/todos.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { ChartsComponent } from './components/charts/charts.component';
 import { DonutChartItemComponent } from './components/donut-chart-item/donut-chart-item.component';
+import { BarChartItemComponent } from './components/bar-chart-item/bar-chart-item.component';
 
 const appRoutes: Routes = [];
 
@@ -21,6 +22,7 @@ const appRoutes: Routes = [];
         TodoItemComponent,
         ChartsComponent,
         DonutChartItemComponent,
+        BarChartItemComponent,
     ],
     imports: [
         BrowserModule,

@@ -4,7 +4,7 @@ import * as d3 from 'd3-selection';
 import * as d3Scale from 'd3-scale';
 import * as d3Shape from 'd3-shape';
 
-import { DonutChart } from '../../models/DonutChart';
+import { Chart_Type1 } from '../../models/Chart_Type1';
 
 @Component({
 selector: 'app-donut-chart-item',
@@ -13,7 +13,7 @@ templateUrl: './donut-chart-item.component.html',
 styleUrls: ['./donut-chart-item.component.css']
 })
 export class DonutChartItemComponent implements OnInit {
-@Input() chart: DonutChart;
+@Input() chart: Chart_Type1;
 
 private width: number;
 private height: number;
@@ -27,6 +27,7 @@ private pie: any;
 private color: any;
 
 private g: any;
+
 constructor(private container: ElementRef) {}
 
 ngOnInit() {
@@ -42,7 +43,7 @@ ngOnInit() {
 }
 
 private initSvg() {
-    console.log("whall",this.chart.title);
+
     this.svg = d3.select(this.container.nativeElement).select("svg");
 
     this.width = +this.svg.attr('width');

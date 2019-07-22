@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DonutChart } from '../../models/DonutChart';
+import { Chart_Type1 } from '../../models/Chart_Type1';
 import { ChartsService } from '../../services/charts.service';
 
 @Component({
@@ -8,14 +8,15 @@ import { ChartsService } from '../../services/charts.service';
   styleUrls: ['./charts.component.css']
 })
 export class ChartsComponent implements OnInit {
-  charts:DonutChart[];
+  donut_charts:Chart_Type1[];
+  bar_charts:Chart_Type1[];
   
 
   constructor(private chartsService:ChartsService) { }
 
   ngOnInit() {
-    this.charts = this.chartsService.getCharts();
-    console.log(this.charts);
+    this.donut_charts = this.chartsService.getDonutCharts();
+    this.bar_charts = this.chartsService.getBarCharts();
     
   }
 
