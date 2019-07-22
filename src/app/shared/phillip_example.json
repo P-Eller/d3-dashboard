@@ -1,0 +1,167 @@
+{
+  "client":"Volkswagen",
+  "name":"Global",
+  "title":"Barcelona",
+  "children":[],
+  "parent":"Global",
+  "date":"20190704",
+  "graphs":[
+    {
+      "title":"Total car production last year",
+      "type":"TEXT",
+      "units":"",
+      "xlabel":[],
+      "x":[
+        ""
+      ],
+      "ylabel":[
+        "Cars"
+      ],
+      "y":[
+        352000
+      ]
+    },
+    {
+      "title":"Fail cases",
+      "type":"DOUGHNUT",
+      "xlabel":[],
+      "x":[
+        "Critical",
+        "Low",
+        "Normal",
+        "High",
+        "None"
+      ],
+      "ylabel":[
+        "Issues"
+      ],
+      "y":[
+        321,
+        3103,
+        2358,
+        464,
+        28965
+
+      ]
+    },
+    {
+      "title":"Production timming",
+      "type":"BAR",
+      "xlabel":[],
+      "x":[
+        "On time",
+        "Delayed",
+        "Others"
+      ],
+      "ylabel":[
+        "Cars"
+      ],
+      "y":[
+        "36231",
+        "8900",
+        "69"
+      ]
+    },
+    {
+      "title":"Factory process",
+      "type":"BAR",
+      "xlabel":[],
+      "x":[
+        "Success",
+        "Failure"
+      ],
+      "ylabel":[
+        "Process"
+      ],
+      "y":[
+        464778,
+        2358
+      ]
+    },
+    {
+      "title":"Production by color",
+      "type":"DOUGHNUT",
+      "xlabel":[],
+      "x":[
+        "Red",
+        "Blue",
+        "Black",
+        "White",
+        "Other"
+      ],
+      "ylabel":[
+        "HECTAREAS"
+      ],
+      "y":[
+        5623,
+        4332,
+        7943,
+        8000,
+        3234
+      ]
+    },
+    {
+      "title":"Production by hp",
+      "type":"BAR",
+      "xlabel":[],
+      "x":[
+        "< 100cv",
+        ">= 100xv"
+      ],
+      "ylabel":[
+        "HECTAREAS"
+      ],
+      "y":[
+        8000,
+        17200
+      ]
+    },
+    {
+      "title":"Paint job fail rate",
+      "type":"BAR",
+      "xlabel":[],
+      "x":[
+        "Fail percentage"
+      ],
+      "ylabel":[
+        "Painjobs"
+      ],
+      "y":[
+        0.0266
+      ]
+    },
+    {
+      "title":"Total emergency wheel",
+      "type":"BAR",
+      "xlabel":[],
+      "ylabel":[
+        "Wheels"
+      ],
+      "y":[
+        10323.72
+      ]
+    },
+    {
+      "title":"Repair timming",
+      "type":"ROSCO",
+      "xlabel":[],
+      "x":[
+        "On time",
+        "Ahead over 30%",
+        "Delayed over 10%",
+        "Delayed over 20%",
+        "Delayed over 30%"
+      ],
+      "ylabel":[
+        "HECTAREAS"
+      ],
+      "y":[
+        38.130925674078725,
+        24.214333592929684,
+        6.882499719093506,
+        4.423696109541909,
+        10.731790478625923
+      ]
+    }
+  ]
+}
