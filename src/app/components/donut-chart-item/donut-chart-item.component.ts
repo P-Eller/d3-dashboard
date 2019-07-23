@@ -92,27 +92,26 @@ private drawChart(data: any[]) {
         .append('g');
     
     lg.append('rect')
-        .style("fill","rgb(0,0,255)")
+        .style("fill",d => this.color(d.x))
         .attr('x', 0)
         .attr('y', 0)
         .attr('width', 20)
         .attr('height', 10);
-    
+   
     lg.append('text')
         .style('font-family', 'Georgia')
         .style('font-size', '13px')
-        .attr('x', 17.5)
+        .attr('x', 22.5)
         .attr('y', 10)
-        .text(d => d.labels);
-    /*
+        .text(d => d.x + " (" +d.y +")");
+    
     let offset = 0;
     lg.attr('transform', function(d, i) {
         let x = offset;
         offset += 15; //distance between labels
         return "translate(80,"+ (offset-10)+ ")" //overwrites the old placeholder for translate
-    
+        
     });
-    */
         
         
 }
