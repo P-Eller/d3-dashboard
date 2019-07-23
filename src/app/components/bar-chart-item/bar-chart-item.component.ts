@@ -5,8 +5,6 @@ import * as d3Scale from 'd3-scale';
 import * as d3Array from 'd3-array';
 import * as d3Axis from 'd3-axis';
 
-import { STATISTICS } from '../../shared/statistics';
-
 import { Chart_Type1 } from '../../models/Chart_Type1';
 
 @Component({
@@ -20,7 +18,7 @@ export class BarChartItemComponent implements OnInit {
 
 private width: number;
 private height: number;
-private margin = {top: 20, right: 20, bottom: 30, left: 40};
+private margin = {top: 20, right: 20, bottom: 30, left: 50};
 
 private x: any;
 private y: any;
@@ -57,6 +55,7 @@ private initAxis() {
     this.y = d3Scale.scaleLinear().rangeRound([this.height, 0]);
     this.x.domain(this.data_array.map((d) => d.x));
     this.y.domain([0, d3Array.max(this.data_array, (d) => d.y)]);
+    console.log(d3Array.max(this.data_array, (d) => d.y))
 }
 
 private drawAxis() {
@@ -66,14 +65,15 @@ private drawAxis() {
         .call(d3Axis.axisBottom(this.x));
     this.g.append('g')
         .attr('class', 'axis axis--y')
-        .call(d3Axis.axisLeft(this.y).ticks(10, '%'))
+        .call(d3Axis.axisLeft(this.y))
         .append('text')
         .attr('class', 'axis-title')
-        .attr('transform', 'rotate(-90)')
-        .attr('y', 6)
-        .attr('dy', '0.71em')
-        .attr('text-anchor', 'end')
-        .text('Frequency');
+        //.attr('transform', 'rotate(-90)')
+        //.attr('y', 6)
+        //.attr('dy', '0.71em')
+        //.attr('text-anchor', 'end')
+        .text(this.chart.ylabel);
+        console.log("y",this.y);
 }
 
 private drawBars() {
