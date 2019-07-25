@@ -52,10 +52,11 @@ ngOnInit() {
 private initSvg() {
 
     this.svg = d3.select(this.container.nativeElement).select("svg");
+    console.log(this.svg.attr('width'));
     this.width = +this.svg.attr('width');
     this.height = +this.svg.attr('height');
     this.radius = Math.min(this.width, this.height) / 3;
-    this.label_radius = this.radius + 15;
+    this.label_radius = this.radius + 12;
 
     this.color = d3Scale.scaleOrdinal()
         .range(['#581845', '#900C3F', '#C70039', '#FF5733', '#ffc305', '#d0743c', '#ff8c00']);
@@ -70,7 +71,15 @@ private initSvg() {
 
     this.svg = d3.select(this.container.nativeElement).select('svg')
         .append('g') //create g-conatiner in svg
-        .attr('transform', 'translate(' + this.width / 2 + ',' + this.height / 2 + ')'); // move postion of middle-point of chart inside svg
+        .attr('transform', 'translate(' + ((this.width - 100) / 2) + ',' + this.height / 2 + ')'); // move postion of middle-point of chart inside svg
+
+    this.svg.append("text")
+        .attr("x", (this.width / 2))             
+        .attr("y", 0 - (10 / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "16px") 
+        .style("text-decoration", "underline")  
+        .text("Value vs Date Graph");
 }
 
 private drawChart(data: any[]) {
@@ -132,7 +141,7 @@ private drawChart(data: any[]) {
     lg.attr('transform', function(d, i) {
         let x = offset;
         offset += 15; //distance between labels
-        return "translate(80,"+ (offset-10)+ ")" //overwrites the old placeholder for translate
+        return "translate(100,"+ (offset-50)+ ")" //overwrites the old placeholder for translate
         
     });
         

@@ -16,7 +16,16 @@ export class ChartsComponent implements OnInit {
 
   ngOnInit() {
     this.charts = this.chartsService.getCharts();
-    console.log("onInit",this.charts)
+    const availableChartType = ["DOUGHNUT","BAR"];
+
+    //check for unknow chart type
+    this.charts.forEach(function (item, index) {
+      if (!availableChartType.includes(item.type)) {
+        console.log("The chart with the title: '"+item.title+
+        "' has an unkown Chart type with the name: '" +item.type +"' and is not plotted");
+      }});
+
+
     
   }
 

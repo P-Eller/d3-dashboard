@@ -1,13 +1,27 @@
-<mat-grid-list cols="2" rowHeight="fit" style="height:600px" margin gutterSize="30px">
-    <ng-container *ngFor="let chart of charts">
-        <mat-grid-tile *ngIf="chart.type === 'DOUGHNUT'">
+<div [className]="'main-container'">
+
+    <ng-container *ngFor="let chart of charts" >
+        <div [ngClass]='["graph-boxes","real-graphs"]' *ngIf="chart.type === 'DOUGHNUT'">
             <app-donut-chart-item  [chart]="chart"></app-donut-chart-item>
-        </mat-grid-tile>
-        <mat-grid-tile *ngIf="chart.type === 'BAR'">
+        </div>
+        <div [ngClass]='["graph-boxes","real-graphs"]' *ngIf="chart.type === 'BAR'">
             <app-bar-chart-item  [chart]="chart"></app-bar-chart-item>
-        </mat-grid-tile>
+        </div>
+
+
+
+
+
+
     </ng-container >
+    <div [ngClass]='["graph-boxes","placeholder"]'>
+        <svg width="320" height="0" style="background-color:green"></svg>
+    </div>
+    <div [ngClass]='["graph-boxes","placeholder"]'>
+        <svg width="320" height="0" style="background-color:green"></svg>
+    </div>
+    <div [ngClass]='["graph-boxes","placeholder"]'>
+        <svg width="320" height="0" style="background-color:green"></svg>
+    </div>
 
-
-
-</mat-grid-list>
+</div>

@@ -1,3 +1,54 @@
 mat-grid-tile {
     background-color: rgb(42, 42, 42);
 }
+
+@media(min-width:639px){
+
+    .graph-boxes{
+        width: 46% !important; /* same as width */
+    }
+}
+
+
+@media(min-width:1000px){
+
+    .graph-boxes{
+        width: 480px !important; /* same as width */
+    }
+}
+
+@media(min-width:2000px){
+
+    .graph-boxes{
+        width: 23% !important; /* same as width */
+    }
+}
+.main-container{
+    background-color: blue;
+    border: 0px #ccc solid;
+    padding:0px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
+.graph-boxes{
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding:0px; 
+    width: 94%; /* same as width */
+}
+
+.real-graphs{
+    background-color: orange;
+    border: 0px #ccc solid;
+}
+
+
+.testtest{
+    background-color: black;
+}
