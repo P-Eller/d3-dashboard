@@ -55,7 +55,6 @@ private initAxis() {
     this.y = d3Scale.scaleLinear().rangeRound([this.height, 0]);
     this.x.domain(this.data_array.map((d) => d.x));
     this.y.domain([0, d3Array.max(this.data_array, (d) => d.y)]);
-    console.log(d3Array.max(this.data_array, (d) => d.y))
 }
 
 private drawAxis() {
@@ -73,7 +72,6 @@ private drawAxis() {
         //.attr('dy', '0.71em')
         //.attr('text-anchor', 'end')
         .text(this.chart.ylabel);
-        console.log("y",this.y);
 }
 
 private drawBars() {

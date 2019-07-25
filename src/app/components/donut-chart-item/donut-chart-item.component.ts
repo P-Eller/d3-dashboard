@@ -21,12 +21,15 @@ private height: number;
 private svg: any;     // TODO replace all `any` by the right type
 
 private radius: number;
+private label_radius: number;
 
 private arc: any;
 private pie: any;
 private color: any;
 
 private g: any;
+
+private total_y: number; //used to calculate percentage
 
 constructor(private container: ElementRef) {}
 
@@ -36,9 +39,12 @@ ngOnInit() {
     // preparing the data from the service in the correct way 
     var data_array = [];
     let chart = this.chart
+    let total_y_counter = 0
     chart.x.forEach(function(key, i) {
+        total_y_counter += chart.y[i];
         let data_point = {x: chart.x[i],y: chart.y[i]};
-    data_array[i] = data_point;});
+        data_array[i] = data_point;});
+    this.total_y = total_y_counter;
 
     this.drawChart(data_array);
 }
@@ -49,6 +55,7 @@ private initSvg() {
     this.width = +this.svg.attr('width');
     this.height = +this.svg.attr('height');
     this.radius = Math.min(this.width, this.height) / 3;
+    this.label_radius = this.radius + 15;
 
     this.color = d3Scale.scaleOrdinal()
         .range(['#581845', '#900C3F', '#C70039', '#FF5733', '#ffc305', '#d0743c', '#ff8c00']);
@@ -78,9 +85,25 @@ private drawChart(data: any[]) {
         .style('fill', d => this.color(d.data.x));
 
     g.append('text')
-        .attr('transform', d => 'translate(' + this.arc.centroid(d) + ')')
+        .attr('transform', d => {
+            var c = this.arc.centroid(d), //gets the default position middle of the arc
+
+            xp = c[0],
+            yp = c[1],
+            // pythagorean theorem for hypotenuse
+            hp = Math.sqrt(xp * xp + yp * yp); //calulation to move the text more to outside/inside
+
+            return "translate(" + (xp / hp * this.label_radius) + ',' + (yp / hp * this.label_radius) + ")";
+        })
         .attr('dy', '.35em')
-        .text(d => d.data.x+" ("+d.data.y+")");
+        .attr('fill','white')
+        .text(d => {
+            let percent:number;
+            percent = d.data.y / this.total_y*100;
+            percent = Math.round(percent * 100) / 100
+
+            return percent+" %";
+        });
 
     const legend = this.svg.append('g')
         .attr('class', 'legend')

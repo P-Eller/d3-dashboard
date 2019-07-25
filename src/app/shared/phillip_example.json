@@ -57,9 +57,9 @@
         "Cars"
       ],
       "y":[
-        "36231",
-        "8900",
-        "69"
+        36231,
+        8900,
+        69
       ]
     },
     {
@@ -134,6 +134,9 @@
       "title":"Total emergency wheel",
       "type":"BAR",
       "xlabel":[],
+      "x":[
+        "unknown"
+      ],
       "ylabel":[
         "Wheels"
       ],

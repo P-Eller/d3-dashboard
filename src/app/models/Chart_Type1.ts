@@ -4,7 +4,7 @@ export class Chart_Type1 {
     title:String;
     type:String;
     x:String[];
-    y:Number[];
+    y:number[];
     xlabel:String[];
     ylabel:String[];
 }
