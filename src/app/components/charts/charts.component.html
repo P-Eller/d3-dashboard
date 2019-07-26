@@ -1,27 +1,31 @@
 <div [className]="'main-container'">
 
     <ng-container *ngFor="let chart of charts" >
-        <div [ngClass]='["graph-boxes","real-graphs"]' *ngIf="chart.type === 'DOUGHNUT'">
+        
+        <div [ngClass]='["graph-container","real-graph-container"]' *ngIf="chart.type === 'DOUGHNUT'">
             <app-donut-chart-item  [chart]="chart"></app-donut-chart-item>
         </div>
-        <div [ngClass]='["graph-boxes","real-graphs"]' *ngIf="chart.type === 'BAR'">
-            <app-bar-chart-item  [chart]="chart"></app-bar-chart-item>
+
+        <div [ngClass]='["graph-container","real-graph-container"]' *ngIf="chart.type === 'BAR'">
+            <app-bar-chart-item [chart]="chart"></app-bar-chart-item>
         </div>
 
-
-
-
-
-
     </ng-container >
-    <div [ngClass]='["graph-boxes","placeholder"]'>
-        <svg width="320" height="0" style="background-color:green"></svg>
+
+
+
+    <div [ngClass]='["graph-container","placeholder"]' #widthCatcher>
+            <div [ngClass]='"graph-boxes"'></div>
     </div>
-    <div [ngClass]='["graph-boxes","placeholder"]'>
-        <svg width="320" height="0" style="background-color:green"></svg>
+
+    <div [ngClass]='["graph-container","placeholder"]'>
+            <div [ngClass]='"graph-boxes"'></div>
     </div>
-    <div [ngClass]='["graph-boxes","placeholder"]'>
-        <svg width="320" height="0" style="background-color:green"></svg>
+
+    <div [ngClass]='["graph-container","placeholder"]'>
+            <div [ngClass]='"graph-boxes"'></div>
     </div>
 
 </div>
+
+

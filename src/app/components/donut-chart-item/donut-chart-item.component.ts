@@ -52,9 +52,8 @@ ngOnInit() {
 private initSvg() {
 
     this.svg = d3.select(this.container.nativeElement).select("svg");
-    console.log(this.svg.attr('width'));
-    this.width = +this.svg.attr('width');
-    this.height = +this.svg.attr('height');
+    this.width = +this.svg.attr('viewBox').split(/\s+|,/)[2];
+    this.height = +this.svg.attr('viewBox').split(/\s+|,/)[3];
     this.radius = Math.min(this.width, this.height) / 3;
     this.label_radius = this.radius + 12;
 

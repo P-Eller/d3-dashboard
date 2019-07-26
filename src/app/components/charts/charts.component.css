@@ -1,54 +1,72 @@
-mat-grid-tile {
-    background-color: rgb(42, 42, 42);
+
+@media(min-width:500px){
+    
+    .graph-container{
+        width: 400px !important;
+        
+    }
+    .real-graph-container{
+        height: 200px !important;
+    }
+
+
+
 }
 
 @media(min-width:639px){
 
-    .graph-boxes{
-        width: 46% !important; /* same as width */
+    .graph-container{
+        width: 40vw !important; 
     }
+    .real-graph-container{
+        height: 20vw !important;
+    }
+
 }
 
 
-@media(min-width:1000px){
+@media(min-width:1080px){
 
-    .graph-boxes{
-        width: 480px !important; /* same as width */
+    .graph-container{
+        width: 480px !important; 
     }
+    .real-graph-container{
+        height: 240px !important;
+    }
+
 }
 
 @media(min-width:2000px){
 
-    .graph-boxes{
-        width: 23% !important; /* same as width */
+    .graph-container{
+        width: 22vw !important; 
+
     }
+    .real-graph-container{
+        height: 11vw !important;
+    }
+
 }
+
 .main-container{
     background-color: blue;
-    border: 0px #ccc solid;
-    padding:0px;
     display: flex;
-    align-items: flex-start;
     justify-content: space-around;
     flex-wrap: wrap;
+    
 }
 
 
+.graph-container{
+    background-color: aqua;
+    position: relative;
+    width: 80vw;
+    height: 40vw;
+    margin: 10px;
 
-.graph-boxes{
-    margin: 0px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding:0px; 
-    width: 94%; /* same as width */
 }
 
-.real-graphs{
-    background-color: orange;
-    border: 0px #ccc solid;
+.placeholder{
+    height: 0px;
 }
 
-
-.testtest{
-    background-color: black;
-}

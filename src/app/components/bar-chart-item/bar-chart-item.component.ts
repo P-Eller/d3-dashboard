@@ -14,11 +14,13 @@ import { Chart_Type1 } from '../../models/Chart_Type1';
   styleUrls: ['./bar-chart-item.component.css']
 })
 export class BarChartItemComponent implements OnInit {
+
+    
 @Input() chart: Chart_Type1;
 
 private width: number;
 private height: number;
-private margin = {top: 20, right: 20, bottom: 30, left: 50};
+private margin = {top: 40, right: 40, bottom: 60, left: 80};
 
 private x: any;
 private y: any;
@@ -36,21 +38,24 @@ ngOnInit() {
         let data_point = {x: chart.x[i],y: chart.y[i]};
     data_array[i] = data_point;});
     this.data_array = data_array;
+    
     this.initSvg();
     this.initAxis();
     this.drawAxis();
     this.drawBars();
+    
 }
 
 private initSvg() {
     this.svg = d3.select(this.container.nativeElement).select('svg');
-    this.width = +this.svg.attr('width') - this.margin.left - this.margin.right;
-    this.height = +this.svg.attr('height') - this.margin.top - this.margin.bottom;
+    this.width = +this.svg.attr('viewBox').split(/\s+|,/)[2]- this.margin.left - this.margin.right;
+    this.height = +this.svg.attr('viewBox').split(/\s+|,/)[3]- this.margin.top - this.margin.bottom;
     this.g = this.svg.append('g')
         .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');
 }
 
 private initAxis() {
+    
     this.x = d3Scale.scaleBand().rangeRound([0, this.width]).padding(0.1);
     this.y = d3Scale.scaleLinear().rangeRound([this.height, 0]);
     this.x.domain(this.data_array.map((d) => d.x));
